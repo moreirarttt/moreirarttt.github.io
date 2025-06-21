@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Performance optimizations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dist/styles.min.css">
+    
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WR48F3PDGR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-WR48F3PDGR', { 
+        'anonymize_ip': true,
+        'cookie_flags': 'SameSite=None;Secure'
+      });
+    </script>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Contemporary tattoo artist at Appreciart IE, Dublin. Specializing in Negative Light, Paletting, and Abstract styles. Book your consultation today.">
+    <meta name="author" content="Moreirart">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="tattoo artist dublin, contemporary tattoo, negative light tattoo, abstract tattoo, appreciart ie, ballsbridge tattoo">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Moreirart - Contemporary Tattoo Artist | Dublin">
+    <meta property="og:description" content="Discover unique tattoo artistry at Appreciart IE, Dublin's premier studio for contemporary and abstract designs. Transform your vision into art.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://moreirart.ie">
+    <meta property="og:image" content="https://moreirart.ie/assets/moreirart-profile.png">
+    <meta property="og:site_name" content="Moreirart">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Moreirart - Contemporary Tattoo Artist | Dublin">
+    <meta name="twitter:description" content="Unique tattoo artistry at Appreciart IE, Dublin. Contemporary and abstract designs that tell your story.">
+    <meta name="twitter:image" content="https://moreirart.ie/assets/moreirart-profile.png">
+
+    <title>Moreirart - Contemporary Tattoo Artist | Dublin</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+    .gallery-swiper .swiper-zoom-container {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+    .gallery-swiper.is-zoomed .swiper-zoom-container {
+        cursor: grab;
+    }
+    .gallery-swiper.is-zoomed .swiper-zoom-container:active {
+        cursor: grabbing;
+    }
+    .zoom-indicator {
+        position: absolute;
+        top: 0.75rem;
+        left: 50%;
+        transform: translateX(-50%) scale(0);
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 0.4rem 0.85rem;
+        border-radius: 1rem;
+        font-size: 0.75rem;
+        transition: transform 0.3s ease, opacity 0.5s ease;
+        pointer-events: none;
+        z-index: 10;
+        opacity: 0;
+    }
+    .gallery-swiper.is-zoomed .zoom-indicator {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+    }
+    </style>
+</head>
+<body class="bg-white text-gray-900 overflow-x-hidden font-poppins">
+    
+    <!-- Header and Navigation -->
+    <header>
+        <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-sm z-50 border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-6 py-4">
+                <div class="flex justify-center items-center relative">
+                    <!-- Navigation Links (centered) -->
+                    <div class="hidden md:flex space-x-12">
+                        <a href="#bio" class="text-gray-500 hover:text-gray-900 transition-colors text-sm font-medium">Biography</a>
+                        <a href="#gallery" class="text-gray-500 hover:text-gray-900 transition-colors text-sm font-medium">Gallery</a>
+                        <a href="#bookings" class="text-gray-500 hover:text-gray-900 transition-colors text-sm font-medium">Bookings</a>
+                    </div>
+                    
+                    <!-- Mobile Links (visible on mobile) -->
+                    <div class="flex md:hidden space-x-8">
+                        <a href="#bio" class="text-gray-500 hover:text-gray-900 transition-colors text-sm font-medium">Biography</a>
+                        <a href="#gallery" class="text-gray-500 hover:text-gray-900 transition-colors text-sm font-medium">Gallery</a>
+                        <a href="#bookings" class="text-gray-500 hover:text-gray-900 transition-colors text-sm font-medium">Bookings</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+
+    <!-- Hero Section -->
+    <section class="min-h-[55vh] flex items-center justify-center bg-gray-50 pt-16 py-5 md:py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <!-- Unified responsive layout -->
+            <div class="flex flex-row items-center justify-center gap-5 md:gap-20">
+                <!-- Left side: Title and description -->
+                <div class="flex-1 md:flex-initial md:text-center">
+                    <h1 class="hero-text text-gray-900 mb-3 md:mb-5 font-light">
+                        Moreirart
+                    </h1>
+                    <div class="text-gray-600 mb-3 md:mb-5 space-y-1 md:space-y-2">
+                        <div class="text-base md:text-lg font-light">Contemporary Tattoo Artist</div>
+                        <div class="text-sm md:text-base font-medium">Paletting • Abstract • Figurative</div>
+                    </div>
+                </div>
+                
+                <!-- Right side: Artist portrait -->
+                <div class="flex-shrink-0 w-52 h-64 md:h-auto md:w-1/3 md:max-w-md">
+                    <img src="assets/moreirart-profile.png" 
+                         alt="Moreirart - Contemporary Tattoo Artist" 
+                         class="w-full h-full object-cover object-center rounded-md"
+                         width="500"
+                         height="600"
+                         fetchpriority="high">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Biography Section -->
+    <section id="bio" class="py-20 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Unified responsive layout -->
+            <div class="flex flex-col gap-6">
+                <h2 class="section-title font-light text-gray-900 text-right md:text-left">Biography</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8 md:gap-16 items-center">
+                    <!-- Biography text -->
+                    <div class="flex-1 min-w-0 md:order-1">
+                        <div class="space-y-5 md:space-y-7 text-gray-800 leading-relaxed text-sm md:text-base">
+                            <p>
+                                My journey started as a child, learning from my father and brother, 
+                                nine years ago I embraced tattooing, using it to express emotions. With styles 
+                                like Negative Light, Paletting, Abstract, and Surrealism.
+                            </p>
+                            
+                            <p>
+                                My art has been showcased globally, including at Carréousel du Louvre and 
+                                World Art Dubai. Painting & art is depth to my vision, helping you to express yourself.
+                            </p>
+                            
+                            <p>
+                                Through my unique art, I invite the observer on a journey of 
+                                self-knowledge and personal expression, where each work represents a bridge 
+                                between the artist and those who contemplate it.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Biography image -->
+                    <div class="flex-shrink-0 w-full h-72 md:w-2/5 md:h-96 md:order-2">
+                        <img src="assets/biography/moreirart-biography.jpg" 
+                             alt="Moreirart Working Process"
+                             class="w-full h-full object-cover rounded-md shadow-md"
+                             width="400"
+                             height="500">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-12 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 mb-6 md:mb-8">
+            <h2 class="section-title font-light text-gray-900 text-center mb-8 md:mb-12">Gallery</h2>
+        </div>
+        
+        <div class="relative max-w-full mx-auto">
+            <!-- Swiper Gallery -->
+            <div class="swiper gallery-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Gallery items will be populated via JavaScript -->
+                </div>
+                <!-- Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+                <div class="zoom-indicator">Zoom Active • Pinch or Double-Click to Exit</div>
+            </div>
+            <div class="text-center mt-4">
+                <p class="text-sm text-gray-500 italic">(double click to zoom)</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryImages = [
+                'assets/gallery/tattoo-1.jpg',
+                'assets/gallery/tattoo-2.jpg',
+                'assets/gallery/tattoo-3.jpg',
+                'assets/gallery/tattoo-4.jpg',
+                'assets/gallery/tattoo-6.jpg',
+                'assets/gallery/tattoo-7.jpg',
+                'assets/gallery/tattoo-8.jpg',
+                'assets/gallery/tattoo-9.jpg',
+                'assets/gallery/tattoo-10.jpg',
+                'assets/gallery/tattoo-11.jpg',
+                'assets/gallery/tattoo-12.jpg',
+                'assets/gallery/tattoo-13.jpg',
+                'assets/gallery/tattoo-14.jpg',
+                'assets/gallery/tattoo-15.jpg',
+                'assets/gallery/tattoo-16.jpg',
+                'assets/gallery/tattoo-17.jpg'
+            ];
+
+            // Populate gallery slides
+            const swiperWrapper = document.querySelector('.swiper-wrapper');
+            swiperWrapper.innerHTML = ''; // Clear any existing content
+            
+            galleryImages.forEach((src, index) => {
+                const slide = document.createElement('div');
+                slide.className = 'swiper-slide';
+                slide.innerHTML = `<div class="swiper-zoom-container">
+                    <img src="${src}" 
+                         alt="Tattoo artwork ${index + 1}" 
+                         class="w-full h-full object-cover rounded-md shadow-sm border border-gray-100" 
+                         loading="lazy">
+                </div>`;
+                swiperWrapper.appendChild(slide);
+            });
+
+            // Initialize Swiper with enhanced configuration
+            window.gallerySwiper = new Swiper('.gallery-swiper', {
+                slidesPerView: 1.3,
+                spaceBetween: 12,
+                loop: false,
+                watchSlidesProgress: true,
+                centeredSlides: true,
+                zoom: {
+                    maxRatio: 3,
+                    minRatio: 1,
+                    toggle: true,
+                    containerClass: 'swiper-zoom-container'
+                },
+
+                breakpoints: {
+                    480: {
+                        slidesPerView: 1.8,
+                        spaceBetween: 16,
+                    },
+                    640: {
+                        slidesPerView: 2.2,
+                        spaceBetween: 20,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 24,
+                    },
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                },
+                autoplay: {
+                    delay: 3500,
+                    disableOnInteraction: true
+                },
+                on: {
+                    zoomChange: function(swiper, scale, imageEl) {
+                        if(scale > 1) {
+                            swiper.autoplay.stop();
+                            swiper.navigation.update();
+                            swiper.el.classList.add('is-zoomed');
+                            // Feedback visual para usuários sobre o status do zoom
+                            setTimeout(() => {
+                                if (swiper.el.classList.contains('is-zoomed')) {
+                                    // Manter indicador visível por 3 segundos, depois atenuar
+                                    let indicator = swiper.el.querySelector('.zoom-indicator');
+                                    indicator.style.opacity = '1';
+                                    setTimeout(() => {
+                                        indicator.style.opacity = '0.7';
+                                    }, 3000);
+                                }
+                            }, 300);
+                        } else {
+                            swiper.autoplay.start();
+                            swiper.el.classList.remove('is-zoomed');
+                        }
+                    }
+                }
+            });
+        });
+
+        // Mobile menu was changed to always visible, no toggle needed
+        
+        // Analytics event tracking
+        document.addEventListener('DOMContentLoaded', function() {
+            // Analytics event tracking for gallery interactions
+            const swiperElement = document.querySelector('.gallery-swiper');
+            
+            // Track gallery interactions - only track single clicks not related to zoom
+            swiperElement.addEventListener('click', function(e) {
+                // Only track analytics if it's not a double-click zoom attempt
+                if (typeof gtag === 'function' && !e.target.closest('.swiper-zoom-container')) {
+                    gtag('event', 'gallery_interaction', {
+                        'event_category': 'engagement',
+                        'event_label': 'gallery_view'
+                    });
+                }
+            });
+            
+            // Track booking button clicks
+            document.querySelector('.whatsapp-btn').addEventListener('click', function() {
+                if (typeof gtag === 'function') {
+                    gtag('event', 'booking_initiated', {
+                        'event_category': 'conversion',
+                        'event_label': 'whatsapp_booking'
+                    });
+                }
+            });
+            
+            // Track navigation clicks
+            document.querySelectorAll('nav a').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'navigation', {
+                            'event_category': 'engagement',
+                            'event_label': e.target.getAttribute('href').replace('#', '')
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- Bookings Section -->
+    <section id="bookings" class="py-16 md:py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="section-title font-light text-gray-900 mb-10">Book Your Session</h2>
+            
+            <p class="text-gray-600 max-w-2xl mx-auto mb-14 leading-relaxed text-sm md:text-base">
+                Ready to transform your vision into art? Book a consultation session to discuss your ideas 
+                and create something unique. Direct message for appointments and inquiries.
+            </p>
+            
+            <!-- WhatsApp Booking Button -->
+            <a href="https://wa.me/353838257351?text=Hi%20Thiago!%20I%27d%20like%20to%20book%20a%20session%20with%20you.%20Could%20you%20please%20tell%20me%20how%20to%20move%20forward%3F%20Appreciate%20it!" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               referrerpolicy="no-referrer"
+               class="inline-flex items-center px-5 py-3 md:px-8 md:py-4 text-white bg-green-600 rounded-lg whatsapp-btn mb-12 md:mb-16 shadow-md hover:shadow-lg transition-shadow duration-300">
+                <svg class="w-5 h-5 md:w-6 md:h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7 8.5 7 9.71C7 10.93 7.89 12.1 8 12.27C8.14 12.44 9.76 14.94 12.25 16C12.84 16.27 13.3 16.42 13.66 16.53C14.25 16.72 14.79 16.69 15.22 16.63C15.7 16.56 16.68 16.03 16.89 15.45C17.1 14.87 17.1 14.38 17.04 14.27C16.97 14.17 16.81 14.11 16.56 14C16.31 13.86 15.09 13.26 14.87 13.18C14.64 13.1 14.5 13.06 14.31 13.3C14.15 13.55 13.67 14.11 13.53 14.27C13.38 14.44 13.24 14.46 13 14.34C12.74 14.21 11.94 13.95 11 13.11C10.26 12.45 9.77 11.64 9.62 11.39C9.5 11.15 9.61 11 9.73 10.89C9.84 10.78 10 10.6 10.1 10.45C10.23 10.31 10.27 10.2 10.35 10.04C10.43 9.87 10.39 9.73 10.33 9.61C10.27 9.5 9.77 8.26 9.56 7.77C9.36 7.29 9.16 7.35 9 7.34C8.86 7.34 8.7 7.33 8.53 7.33Z"/>
+                </svg>
+                Book Your Session
+            </a>
+            
+            <!-- Desktop Contact Grid -->
+            <div class="hidden md:grid md:grid-cols-3 gap-14 text-center">
+                <div>
+                    <a href="mailto:moreirartthiago@gmail.com" class="block group">
+                        <div class="mb-5">
+                            <div class="w-14 h-14 bg-gray-100 rounded-full mx-auto flex items-center justify-center shadow-sm group-hover:bg-gray-200 transition-colors">
+                                <svg class="w-7 h-7 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="font-medium mb-3">Email</h3>
+                        <p class="text-gray-600 text-sm group-hover:text-gray-900 transition-colors">moreirartthiago@gmail.com</p>
+                    </a>
+                </div>
+                
+                <div>
+                    <a href="https://maps.app.goo.gl/hgRfhonFQ1reWZhi8" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       referrerpolicy="no-referrer"
+                       class="block group">
+                        <div class="mb-5">
+                            <div class="w-14 h-14 bg-gray-100 rounded-full mx-auto flex items-center justify-center shadow-sm group-hover:bg-gray-200 transition-colors">
+                                <svg class="w-7 h-7 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="font-medium mb-3">Studio</h3>
+                        <p class="text-gray-600 text-sm group-hover:text-gray-900 transition-colors">Appreciart IE - Tattoo & Gallery<br>Ballsbridge, Dublin, Ireland</p>
+                    </a>
+                </div>
+                
+                <div>
+                    <a href="https://www.instagram.com/moreirarttt/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="block group">
+                        <div class="mb-5">
+                            <div class="w-14 h-14 bg-gray-100 rounded-full mx-auto flex items-center justify-center shadow-sm group-hover:bg-gray-200 transition-colors">
+                                <svg class="w-7 h-7 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="font-medium mb-3">Instagram</h3>
+                        <p class="text-gray-600 text-sm group-hover:text-gray-900 transition-colors">@moreirarttt</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mobile Contact Layout -->
+            <div class="md:hidden flex justify-evenly px-4 space-x-3 mt-8">
+                <a href="mailto:moreirartthiago@gmail.com" class="flex flex-col items-center text-center group">
+                    <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mb-3 shadow-sm group-hover:bg-gray-200 transition-colors">
+                        <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-medium text-sm mb-1">Email</h3>
+                    <p class="text-gray-600 text-xs group-hover:text-gray-900 transition-colors">moreirartthiago@gmail.com</p>
+                </a>
+                
+                <a href="https://maps.app.goo.gl/hgRfhonFQ1reWZhi8" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   referrerpolicy="no-referrer" 
+                   class="flex flex-col items-center text-center group">
+                    <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mb-3 shadow-sm group-hover:bg-gray-200 transition-colors">
+                        <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-medium text-sm mb-1">Studio</h3>
+                    <p class="text-gray-600 text-xs group-hover:text-gray-900 transition-colors">Appreciart IE<br>Ballsbridge, Dublin</p>
+                </a>
+                
+                <a href="https://www.instagram.com/moreirarttt/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="flex flex-col items-center text-center group">
+                    <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mb-3 shadow-sm group-hover:bg-gray-200 transition-colors">
+                        <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-medium text-sm mb-1">Instagram</h3>
+                    <p class="text-gray-600 text-sm group-hover:text-gray-900 transition-colors">@moreirarttt</p>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="py-4 bg-white border-t border-gray-100 text-center">
+    <div class="max-w-4xl mx-auto px-4">
+        <p class="text-gray-500 text-xs">
+            © 2025 Moreirart. All rights reserved.
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>
