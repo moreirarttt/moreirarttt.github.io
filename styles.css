@@ -82,3 +82,57 @@
 .swiper-pagination-bullet-active {
     opacity: 1;
 }
+
+/* Hero image custom adjustments */
+.profile-img-custom {
+    display: block;
+    width: 220px;
+    height: 280px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 1.2rem;
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.10);
+    margin: 0;
+    background: none;
+    padding: 0;
+}
+@media (min-width: 640px) {
+    .profile-img-custom {
+        width: 260px;
+        height: 340px;
+    }
+}
+@media (min-width: 768px) {
+    .profile-img-custom {
+        width: 300px;
+        height: 400px;
+    }
+}
+@media (min-width: 1024px) {
+    .profile-img-custom {
+        width: 360px;
+        height: 470px;
+    }
+}
+
+/* Remove card/padding around hero image */
+.profile-img-custom {
+    background: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+/* Ajuste do padding do hero para mobile para não sobrepor navbar */
+@media (max-width: 767px) {
+    .min-h-\[55vh\] {
+        min-height: 40vh !important;
+    }
+    .pt-24 {
+        padding-top: 4.5rem !important;
+    }
+    @media (max-width: 400px) {
+        .pt-24 {
+            padding-top: 5.5rem !important;
+        }
+    }
+}
