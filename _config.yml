@@ -1,0 +1,21 @@
+# GitHub Pages Security Configuration
+# This file helps ensure HTTPS is properly enforced
+
+# Enable HTTPS enforcement
+enforce_ssl: true
+
+# Custom domain with HTTPS
+url: "https://moreirart.ie"
+baseurl: ""
+
+# Security plugins (if using Jekyll)
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Additional security headers (GitHub Pages supports some of these)
+webrick:
+  headers:
+    Content-Security-Policy: "default-src 'self' https:; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cdn.jsdelivr.net"
+    X-Frame-Options: "DENY"
+    X-Content-Type-Options: "nosniff"

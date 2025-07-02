@@ -1,40 +1,66 @@
-# Redirecionar todas as solicitações para o index.html
+# Security and HTTPS Configuration
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+  
+  # Force HTTPS redirect
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  
+  # Redirecionar todas as solicitações para o index.html
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . /index.html [L]
 </IfModule>
 
+# Security Headers
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set X-XSS-Protection "1; mode=block"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+  
+  # Content Security Policy - Simplificada mas segura
+  Header always set Content-Security-Policy "default-src 'self' https:; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com; frame-ancestors 'none'; upgrade-insecure-requests;"
+  
+  # Remove server signature
+  Header unset X-Powered-By
+</IfModule>
+
 # Impedir listagem de diretórios
 Options -Indexes
 
-# Definir cabeçalhos de cache
+# Definir cabeçalhos de cache e performance
 <IfModule mod_expires.c>
   ExpiresActive On
   
-  # Imagens - cache por 1 mês
-  ExpiresByType image/jpeg "access plus 1 month"
-  ExpiresByType image/png "access plus 1 month"
-  ExpiresByType image/webp "access plus 1 month"
+  # Imagens - cache por 1 ano para melhor performance
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
   
-  # CSS, JS - cache por 1 semana 
-  ExpiresByType text/css "access plus 1 week"
-  ExpiresByType application/javascript "access plus 1 week"
+  # CSS, JS - cache por 1 mês 
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
   
-  # HTML - sem cache
-  ExpiresByType text/html "access plus 0 seconds"
+  # HTML - cache mínimo para atualizações
+  ExpiresByType text/html "access plus 1 hour"
 </IfModule>
 
 # Definir tipo de conteúdo
 <IfModule mod_mime.c>
   AddType application/javascript .js
   AddType text/css .css
+  AddType image/webp .webp
+  AddType application/manifest+json .webmanifest
 </IfModule>
 
-# Comprimir conteúdo
+# Comprimir conteúdo para melhor performance
 <IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript application/json image/svg+xml
+  AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript application/json image/svg+xml text/xml application/xml
 </IfModule>
